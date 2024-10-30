@@ -27,4 +27,5 @@ public class BuscaColetaPorIDStep {
     public void oStatusCodeDaRespostaDeveSer(int statusCode) {
         Assert.assertEquals(statusCode, buscaPorIdService.response.statusCode());
     }
+
 }
