@@ -15,8 +15,13 @@ public class BuscaPorIdService {
     final BuscaPorIdModel buscaPorIdModel = new BuscaPorIdModel();
     public final Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
     public Response response;
-//    String baseUrl = "http://localhost:8080/api/coleta/5";
     String baseUrl = "http://localhost:8080";
+//    String idColeta;
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 
     public void setFieldBuscaPorId(String field, String value) {
         switch (field) {
