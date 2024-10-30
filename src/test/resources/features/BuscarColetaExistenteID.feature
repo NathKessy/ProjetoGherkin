@@ -12,5 +12,5 @@ Funcionalidade: Busca coleta por ID
       | telefoneContato | 123456789 |
       | emailContato | contato1@example.com |
       | enderecoContato | Rua A, 123, Cidade X |
-    Quando eu faço uma requisição GET para "/api/coleta/1" para procurar a coleta
+    Quando eu faço uma requisição GET para "/api/coleta/5" para procurar a coleta
     Então o status code da resposta deve ser 200

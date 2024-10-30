@@ -6,7 +6,6 @@ import com.fiap.coletaai.model.UsuarioEntity;
 import com.fiap.coletaai.repository.UsuarioRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,11 +19,9 @@ public class UsuarioService {
 
     public UsuarioExibicaoDTO salvarUsuario(UsuarioCadastroDTO usuarioDTO){
 
-        String senhaCriptografada = new BCryptPasswordEncoder().encode(usuarioDTO.senha());
 
         UsuarioEntity usuario = new UsuarioEntity();
         BeanUtils.copyProperties(usuarioDTO, usuario);
-        usuario.setSenha(senhaCriptografada);
 
         UsuarioEntity usuarioSalvo = usuarioRepository.save(usuario);
         return new UsuarioExibicaoDTO(usuarioSalvo);

@@ -15,11 +15,8 @@ public class BuscaPorIdService {
     final BuscaPorIdModel buscaPorIdModel = new BuscaPorIdModel();
     public final Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
     public Response response;
+//    String baseUrl = "http://localhost:8080/api/coleta/5";
     String baseUrl = "http://localhost:8080";
-
-    // Adicione suas credenciais aqui
-    private final String username = "user";
-    private final String password = "password";
 
     public void setFieldBuscaPorId(String field, String value) {
         switch (field) {
@@ -35,18 +32,16 @@ public class BuscaPorIdService {
     }
 
     public void createBuscaPorId(String endPoint) {
-        String url = baseUrl + endPoint; // URL da API
+        String url = baseUrl + endPoint;
+        String bodySend = gson.toJson(buscaPorIdModel);
         response = given()
                 .contentType(ContentType.JSON)
                 .accept(ContentType.JSON)
-                .auth().preemptive().basic(username, password) // Autenticação básica
+                .body(bodySend)
                 .when()
-                .get(url) // Alterado de post para get
+                .get(url)
                 .then()
                 .extract()
                 .response();
     }
-
-
-
 }

@@ -25,7 +25,6 @@ public class BuscaColetaPorIDStep {
 
     @io.cucumber.java.pt.Então("o status code da resposta deve ser {int}")
     public void oStatusCodeDaRespostaDeveSer(int statusCode) {
-        //statusCode = 403;
         Assert.assertEquals(statusCode, buscaPorIdService.response.statusCode());
     }
 }
