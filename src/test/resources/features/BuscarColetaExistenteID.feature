@@ -27,8 +27,7 @@ Funcionalidade: Busca coleta por ID
       | enderecoContato | Rua A, 123, Cidade X |
     Quando eu faço uma requisição GET para "/api/coleta/1" para procurar a coleta
     Então o status code da resposta deve ser 404
-#    E o corpo de resposta de erro da api deve retornar a mensagem "Dados fornecidos são inválidos."
-
+#    E o corpo de resposta de erro da api deve retornar a mensagem "Erro: Coleta não encontrada."
 
 
 

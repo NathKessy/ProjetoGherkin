@@ -1,8 +1,10 @@
 package steps;
 
 import io.cucumber.java.pt.Dado;
+import io.cucumber.java.pt.E;
 import io.cucumber.java.pt.Então;
 import io.cucumber.java.pt.Quando;
+import model.AvisoMessageModel;
 import org.junit.Assert;
 import services.CadastroColetaService;
 
@@ -29,4 +31,18 @@ public class CadastroColetaStep {
     public void oStatusCodeDeveRetornar(int statusCode) {
         Assert.assertEquals(statusCode, cadastroColetaService.response.statusCode());
     }
+
+//    @E("o corpo de resposta de criacao da api deve retornar a mensagem {string}")
+//    public void oCorpoDeRespostaDeCriacaoDaApiDeveRetornarAMensagem(String message) {
+//        AvisoMessageModel avisoMessageModel = cadastroColetaService.gson.fromJson(
+//                cadastroColetaService.response.jsonPath().prettify(), AvisoMessageModel.class);
+//        Assert.assertEquals(message, avisoMessageModel.getMessage());
+//    }
+
+//    @E("o corpo de resposta de criacao da api deve retornar a mensagem {string}")
+//    public void oCorpoDeRespostaDeCriacaoDaApiDeveRetornarAMensagem(String message) {
+//        AvisoMessageModel avisoMessageModel = cadastroColetaService.gson.fromJson(
+//                cadastroColetaService.response.jsonPath().getString("mensagem"), AvisoMessageModel.class);
+//        Assert.assertEquals(message, avisoMessageModel.getMessage());
+//    }
 }

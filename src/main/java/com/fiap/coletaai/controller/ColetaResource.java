@@ -16,7 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -32,6 +34,14 @@ public class ColetaResource {
         return coleta.map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
+
+//    @GetMapping("/{id}")
+//    public ResponseEntity<String> buscarPorId(@PathVariable("id") Integer id) {
+//        final Optional<ColetaEntity> coleta = this.coletaService.getById(id);
+//        return coleta.map(coletaEntity -> ResponseEntity.ok("Coleta encontrada: " + coletaEntity))
+//                .orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).body("Erro: Coleta não encontrada."));
+//    }
+
 
     @GetMapping()
     public ResponseEntity<List<ColetaEntity>> listar() {

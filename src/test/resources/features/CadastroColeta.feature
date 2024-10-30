@@ -14,3 +14,4 @@ Funcionalidade: Cadastro de coleta
       | enderecoContato | Rua do Paraiso, 123 - Assunção, SP |
     Quando eu enviar a requisicao POST para o endpoint "/api/coleta" para cadastro da coleta
     Então o status code deve retornar 201
+

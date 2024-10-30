@@ -107,6 +107,3 @@ docker ps
 
 ### Contribuição
 Sinta-se à vontade para abrir uma issue ou enviar um pull request com sugestões de melhorias e correções.
-
-### Licença
-Este projeto está licenciado sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
