@@ -1,5 +1,6 @@
 #language:pt
 
+@regressivo
 Funcionalidade: Busca coleta por ID
 
   Cenario: Buscar coleta existente por ID com sucesso

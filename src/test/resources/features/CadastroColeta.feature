@@ -1,5 +1,6 @@
 #language:pt
 
+@regressivo
 Funcionalidade: Cadastro de coleta
 
   Cenario: Inserir uma coleta com sucesso
