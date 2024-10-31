@@ -34,23 +34,13 @@ public class ColetaResource {
         final Optional<ColetaEntity> coleta = this.coletaService.getById(id);
 
         if (coleta.isPresent()) {
-            return ResponseEntity.ok(coleta.get()); // Retorna apenas a coleta encontrada
+            return ResponseEntity.ok(coleta.get());
         } else {
             Map<String, String> erro = new HashMap<>();
             erro.put("message", "Erro: Coleta não encontrada.");
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(erro); // Retorna apenas a mensagem de erro
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(erro);
         }
     }
-
-
-//      CÓDIGO PRINCIPAL
-//    @GetMapping("/{id}")
-//    public ResponseEntity<ColetaEntity> buscarPorId(@PathVariable("id") Integer id) {
-//        final Optional<ColetaEntity> coleta = this.coletaService.getById(id);
-//        return coleta.map(ResponseEntity::ok)
-//                .orElseGet(() -> ResponseEntity.notFound().build());
-//    }
-
 
     @GetMapping()
     public ResponseEntity<List<ColetaEntity>> listar() {

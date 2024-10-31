@@ -12,7 +12,6 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import model.BuscaPorIdModel;
 import net.minidev.json.JSONObject;
-import org.json.JSONTokener;
 
 import java.io.IOException;
 import java.nio.file.Files;
