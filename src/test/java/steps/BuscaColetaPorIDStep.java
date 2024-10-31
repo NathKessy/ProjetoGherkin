@@ -1,13 +1,16 @@
 package steps;
 
+import com.networknt.schema.ValidationMessage;
 import io.cucumber.java.pt.E;
 import io.cucumber.java.pt.Então;
 import model.AvisoMessageModel;
 import org.junit.Assert;
 import services.BuscaPorIdService;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class BuscaColetaPorIDStep {
 
@@ -37,11 +40,14 @@ public class BuscaColetaPorIDStep {
         Assert.assertEquals(message, avisoMessageModel.getMessage());
     }
 
-//    @E("que o arquivo de contrato esperado é o {string}")
-//    public void queOArquivoDeContratoEsperadoÉO(String conrect) {
-//    }
-//
-//    @Então("a resposta da requisicao deve estar em comfirmidade com o contrato selecionado")
-//    public void aRespostaDaRequisicaoDeveEstarEmComfirmidadeComOContratoSelecionado() {
-//    }
+    @E("que o arquivo de contrato esperado é o {string}")
+    public void queOArquivoDeContratoEsperadoÉO(String contract) throws IOException {
+        buscaPorIdService.setContract(contract);
+    }
+
+    @Então("a resposta da requisicao deve estar em comfirmidade com o contrato selecionado")
+    public void aRespostaDaRequisicaoDeveEstarEmComfirmidadeComOContratoSelecionado() throws IOException {
+        Set<ValidationMessage> validationResponse = buscaPorIdService.validateResponseAgainstSchema();
+        Assert.assertTrue("o contrato está invalido. Erros encontrados: " + validationResponse, validationResponse.isEmpty());
+    }
 }
