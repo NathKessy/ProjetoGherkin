@@ -1,0 +1,87 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/object1730386997.json",
+  "title": "Root",
+  "type": "object",
+  "required": [
+    "id",
+    "tipoColeta",
+    "dataColeta",
+    "nomeContato",
+    "telefoneContato",
+    "emailContato",
+    "enderecoContato"
+  ],
+  "properties": {
+    "id": {
+      "$id": "#root/id",
+      "title": "Id",
+      "type": "integer",
+      "examples": [
+        6
+      ],
+      "default": 0
+    },
+    "tipoColeta": {
+      "$id": "#root/tipoColeta",
+      "title": "Tipocoleta",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "Plastico"
+      ],
+      "pattern": "^.*$"
+    },
+    "dataColeta": {
+      "$id": "#root/dataColeta",
+      "title": "Datacoleta",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "2024-05-26"
+      ],
+      "pattern": "^.*$"
+    },
+    "nomeContato": {
+      "$id": "#root/nomeContato",
+      "title": "Nomecontato",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "Simbista"
+      ],
+      "pattern": "^.*$"
+    },
+    "telefoneContato": {
+      "$id": "#root/telefoneContato",
+      "title": "Telefonecontato",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "11 9 4889-8486"
+      ],
+      "pattern": "^.*$"
+    },
+    "emailContato": {
+      "$id": "#root/emailContato",
+      "title": "Emailcontato",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "gustavo@gmail.com"
+      ],
+      "pattern": "^.*$"
+    },
+    "enderecoContato": {
+      "$id": "#root/enderecoContato",
+      "title": "Enderecocontato",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "Rua Santiago"
+      ],
+      "pattern": "^.*$"
+    }
+  }
+}

@@ -6,8 +6,6 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import model.CadastroColetaModel;
 
-import java.time.LocalDate;
-
 import static io.restassured.RestAssured.given;
 
 public class CadastroColetaService {

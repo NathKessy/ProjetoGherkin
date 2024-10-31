@@ -28,18 +28,27 @@ public class ColetaResource {
     @Autowired
     private ColetaService coletaService;
 
+
     @GetMapping("/{id}")
-    public ResponseEntity<ColetaEntity> buscarPorId(@PathVariable("id") Integer id) {
+    public ResponseEntity<?> buscarPorId(@PathVariable("id") Integer id) {
         final Optional<ColetaEntity> coleta = this.coletaService.getById(id);
-        return coleta.map(ResponseEntity::ok)
-                .orElseGet(() -> ResponseEntity.notFound().build());
+
+        if (coleta.isPresent()) {
+            return ResponseEntity.ok(coleta.get()); // Retorna apenas a coleta encontrada
+        } else {
+            Map<String, String> erro = new HashMap<>();
+            erro.put("message", "Erro: Coleta não encontrada.");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(erro); // Retorna apenas a mensagem de erro
+        }
     }
 
+
+//      CÓDIGO PRINCIPAL
 //    @GetMapping("/{id}")
-//    public ResponseEntity<String> buscarPorId(@PathVariable("id") Integer id) {
+//    public ResponseEntity<ColetaEntity> buscarPorId(@PathVariable("id") Integer id) {
 //        final Optional<ColetaEntity> coleta = this.coletaService.getById(id);
-//        return coleta.map(coletaEntity -> ResponseEntity.ok("Coleta encontrada: " + coletaEntity))
-//                .orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).body("Erro: Coleta não encontrada."));
+//        return coleta.map(ResponseEntity::ok)
+//                .orElseGet(() -> ResponseEntity.notFound().build());
 //    }
 
 

@@ -1,6 +1,5 @@
 #language:pt
 
-
 Funcionalidade: Cadastro de coleta
 
   Cenario: Inserir uma coleta com sucesso
